@@ -52,39 +52,39 @@ public class MainController {
 
     }
 
-    @GetMapping("/user")
-    @ResponseBody
-    public User user(@RequestParam(name="id", required=true, defaultValue = "") long id) throws IOException {
-        return userService.findUser(id);
-    }
-
-    @GetMapping("/users")
-    @ResponseBody
-    public List<User> users() throws IOException {
-        return userService.findAll();
-
-
-    }
-
-    @Autowired
-    private UserService userService;
-
-    @RequestMapping(value = "/user/registration", method = RequestMethod.POST)
-    @ResponseBody
-    public String registerUserAccount(
-            @RequestBody User user, HttpServletRequest request) {
-
-        logger.debug("Registering user account with information: {}", user);
-        userService.create(user);
-////        if (registered == null) {
-////            throw new UserAlreadyExistException();
-////        }
-//        String appUrl = "http://" + request.getServerName() + ":" +
-//                request.getServerPort() + request.getContextPath();
-
-//        eventPublisher.publishEvent(
-//                new OnRegistrationCompleteEvent(registered, request.getLocale(), appUrl));
-
-        return "success";
-    }
+//    @GetMapping("/user")
+//    @ResponseBody
+//    public User user(@RequestParam(name="id", required=true, defaultValue = "") long id) throws IOException {
+//        return userService.findUser(id);
+//    }
+//
+//    @GetMapping("/users")
+//    @ResponseBody
+//    public List<User> users() throws IOException {
+//        return userService.findAll();
+//
+//
+//    }
+//
+//    @Autowired
+//    private UserService userService;
+//
+//    @RequestMapping(value = "/user/registration", method = RequestMethod.POST)
+//    @ResponseBody
+//    public String registerUserAccount(
+//            @RequestBody User user, HttpServletRequest request) {
+//
+//        logger.debug("Registering user account with information: {}", user);
+//        userService.create(user);
+//////        if (registered == null) {
+//////            throw new UserAlreadyExistException();
+//////        }
+////        String appUrl = "http://" + request.getServerName() + ":" +
+////                request.getServerPort() + request.getContextPath();
+//
+////        eventPublisher.publishEvent(
+////                new OnRegistrationCompleteEvent(registered, request.getLocale(), appUrl));
+//
+//        return "success";
+//    }
 }
